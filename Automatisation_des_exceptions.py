@@ -56,12 +56,16 @@ st.markdown(style, unsafe_allow_html=True)
 # Titre principal
 
 # Chemin des fichiers
-chemin = r"C:\Users\DELL\Desktop\OrangeCameroun\TransferNow"
-os.chdir(chemin)
+chemin_github="data"
+# chemin = r"C:\Users\DELL\Desktop\OrangeCameroun\TransferNow"
+# os.chdir(chemin)
+
+MTN_url = os.path.join(chemin_github, "CDR_MTN_not_in_CDR_OCM___MTN_vers_ORANGE_02032023.csv")
+OCM_url = os.path.join(chemin_github, "CDR_OCM_not_in_CDR_MTN___MTN_vers_ORANGE_02032023.csv")
 
 # Chargement des données
-MTN = pd.read_csv("CDR_MTN_not_in_CDR_OCM___MTN_vers_ORANGE_02032023.csv", sep=";", encoding='latin1')
-OCM = pd.read_csv("CDR_OCM_not_in_CDR_MTN___MTN_vers_ORANGE_02032023.csv", sep=";", encoding='latin1')
+MTN = pd.read_csv(MTN_url, sep=";", encoding='latin1')
+OCM = pd.read_csv(OCM_url, sep=";", encoding='latin1')
 
 # Sidebar pour la navigation
 st.sidebar.title(':mag_right: Sommaire')
